@@ -1,5 +1,3 @@
-import { url } from "inspector";
-
 export const imageGallery = [
   {
     id: 1,
@@ -23,7 +21,7 @@ export const imageGallery = [
     id: 4,
 
     text: "Skincare",
-    url: "https://images.pexels.com/photos/2661255/pexels-photo-2661255.jpeg",
+    url: "https://images.pexels.com/photos/7128589/pexels-photo-7128589.jpeg",
   },
   {
     id: 5,
@@ -33,18 +31,24 @@ export const imageGallery = [
   },
   {
     id: 6,
-    text: "Red Lips",
-    url: "https://images.pexels.com/photos/2036103/pexels-photo-2036103.jpeg",
+    text: "Lover",
+    url: "https://images.pexels.com/photos/7945007/pexels-photo-7945007.jpeg",
   },
   {
     id: 7,
-    text: "Car",
-    url: "https://images.pexels.com/photos/935985/pexels-photo-935985.jpeg",
+    text: "Chill day",
+    url: "https://images.pexels.com/photos/7929622/pexels-photo-7929622.jpeg",
   },
   {
     id: 8,
 
     text: "LadyBoss",
-    url: "https://images.pexels.com/photos/8206770/pexels-photo-8206770.jpeg",
+    url: "https://images.pexels.com/photos/2228561/pexels-photo-2228561.jpeg",
+  },
+  {
+    id: 9,
+
+    text: "LadyBoss",
+    url: "https://images.pexels.com/photos/1251171/pexels-photo-1251171.jpeg",
   },
 ];

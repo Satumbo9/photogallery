@@ -1,24 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, createContext, useContext } from "react";
 
-interface themeType {
+interface ThemeType {
+  text: string;
+  background: string;
+  button: string;
+}
+
+interface ThemeContextType {
   isButton: boolean;
+  theme: {
+    text: string;
+    background: string;
+    button: string;
+  };
   onThemeChange: () => void;
 }
 
-const themeDefaultValues = {
+const ThemeDefaultValues = {
   isButton: false,
+  theme: {
+    text: "",
+    background: "",
+    button: "",
+  },
   onThemeChange: () => {},
 };
 
 // 1 - Creating the context
-const ContextTheme = createContext<themeType>(themeDefaultValues);
+const ContextTheme = createContext<ThemeContextType>(ThemeDefaultValues);
 
-const ThemeContext = ({ children }: { children: React.ReactNode }) => {
+interface ThemeProviderProps {
+  children: React.ReactNode;
+}
+
+const ThemeContextProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // 2 - Creating the states for the theme
-  const [theme, setTheme] = useState({
+  const [theme, setTheme] = useState<ThemeType>({
     text: "",
     background: "",
     button: "",
@@ -27,15 +47,18 @@ const ThemeContext = ({ children }: { children: React.ReactNode }) => {
   // 3 - Creating Button Clicked event
   const [isButton, setIsButton] = useState(false);
 
+  useEffect(() => {}, [theme]);
+
   //Creating the ThemeChange function
   const onThemeChange = () => {
+    console.log("onThemeChange working!!!");
     setTheme((prev) => {
       if (prev.background === "") {
         setIsButton(true);
         return {
           text: "text-white",
           background: "bg-black",
-          button: "bg-sky-500",
+          button: "bg-gradient-to-r from-cyan-500 to-blue-500",
         };
       } else {
         setIsButton(false);
@@ -48,13 +71,13 @@ const ThemeContext = ({ children }: { children: React.ReactNode }) => {
     });
   };
   return (
-    <ContextTheme.Provider value={{ isButton, onThemeChange }}>
+    <ContextTheme.Provider value={{ isButton, theme, onThemeChange }}>
       {children}
     </ContextTheme.Provider>
   );
 };
 
-export default ThemeContext;
+export default ThemeContextProvider;
 
 export const useTheme = () => {
   return useContext(ContextTheme);
