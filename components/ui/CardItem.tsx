@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
-import { useRef } from "react";
-
 interface CardItemProps {
   id: number;
   text: string;

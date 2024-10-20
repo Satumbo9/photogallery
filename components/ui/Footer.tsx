@@ -5,7 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
 
 const Footer = () => {
-  const { isButton, theme } = useTheme();
+  const { theme } = useTheme();
   return (
     <footer
       className={`h-40 bg-black gap-5 text-white flex items-center justify-center text-2xl ${theme.text}`}

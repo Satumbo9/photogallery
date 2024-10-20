@@ -6,12 +6,12 @@ import { FaMoon } from "react-icons/fa";
 import { useTheme } from "@/components/context/ThemeContext";
 import CardItem from "@/components/ui/CardItem";
 import { motion } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 export default function Home() {
   const { isButton, theme, onThemeChange } = useTheme();
-  const [isTitleAnimated, setIsTitleAnimated] = useState<boolean>(false);
+  // const [isTitleAnimated, setIsTitleAnimated] = useState<boolean>(false);
   const imageRef = useRef<HTMLImageElement>(null);
   const BfaceTitileRef = useRef<HTMLParagraphElement>(null);
 
@@ -44,7 +44,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    console.log("Animation State: ", isTitleAnimated);
+    // console.log("Animation State: ", isTitleAnimated);
     animate();
   }, []);
   return (
