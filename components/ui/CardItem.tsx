@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 interface CardItemProps {
   id: number;
@@ -26,18 +27,17 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
         whileTap={{
           opacity: 5,
           scale: 1.4,
-          y: -10,
+
           rotateZ: 0,
-          speed: 4,
+          // speed: 9,
         }}
         whileHover={{
           scale: 1.1,
           rotateZ: 4,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.4,
           ease: "easeInOut",
-          bounce: 40,
         }}
       >
         <Image

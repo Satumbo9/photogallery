@@ -48,7 +48,7 @@ export const imageGallery = [
   {
     id: 9,
 
-    text: "LadyBoss",
+    text: "Love wins",
     url: "https://images.pexels.com/photos/1251171/pexels-photo-1251171.jpeg",
   },
 ];

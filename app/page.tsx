@@ -5,10 +5,12 @@ import Footer from "@/components/ui/Footer";
 
 function page() {
   return (
-    <ThemeContextProvider>
-      <Home />
-      <Footer />
-    </ThemeContextProvider>
+    <main className="size-full">
+      <ThemeContextProvider>
+        <Home />
+        <Footer />
+      </ThemeContextProvider>
+    </main>
   );
 }
 

@@ -5,14 +5,14 @@ import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
 
 const Footer = () => {
-  const { theme } = useTheme();
+  const { isButton, theme } = useTheme();
   return (
     <footer
-      className={`h-40 bg-gradient-to-r from-cyan-500 to-blue-500 gap-5 text-white flex items-center justify-center text-2xl ${theme.background} ${theme.text}`}
+      className={`h-40 bg-black gap-5 text-white flex items-center justify-center text-2xl ${theme.text}`}
     >
-      <p>All the images from:</p>
+      <p className="font-bold ">All the images from:</p>
       <Link
-        className="text-black hover:text-white"
+        className="text-white hover:text-red-500"
         target="_blank"
         href="https://www.pexels.com/"
       >
