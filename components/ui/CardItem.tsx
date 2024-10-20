@@ -15,19 +15,30 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
   const { isButton, theme } = useTheme();
   return (
     <div
-      className={`flex flex-col items-center gap-5 cursor-pointer ${
-        isButton ? "bg-white" : null
-      } p-5 rounded-md ${isButton ? "bg-opacity-5" : null} ${theme.text}`}
+      className={`flex flex-col items-center gap-10 cursor-pointer ${
+        isButton ? "bg-white" : "bg-black"
+      } p-5 rounded-md ${isButton ? "bg-opacity-5" : "bg-opacity-[2%]"} ${
+        theme.text
+      }`}
       key={id}
     >
       <motion.div
         whileTap={{
-          opacity: 0.34,
+          opacity: 5,
+          scale: 1.4,
+          y: -10,
+          rotateZ: 0,
+          speed: 4,
         }}
         whileHover={{
           scale: 1.1,
+          rotateZ: 4,
         }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
+        transition={{
+          duration: 0.2,
+          ease: "easeInOut",
+          bounce: 40,
+        }}
       >
         <Image
           priority
@@ -38,7 +49,13 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
           height={300}
         />
       </motion.div>
-      <p className={`text-2xl font-bold `}>{text}</p>
+      <p
+        className={`text-xl font-bold uppercase ${
+          isButton ? " " : "text-gray-700"
+        }`}
+      >
+        {text}
+      </p>
     </div>
   );
 };
