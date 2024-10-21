@@ -25,6 +25,7 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
         whileTap={{
           opacity: 5,
           scale: 1.4,
+          y: -10,
 
           rotateZ: 0,
           // speed: 9,
