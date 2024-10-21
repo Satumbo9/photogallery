@@ -52,3 +52,21 @@ export const imageGallery = [
     url: "https://images.pexels.com/photos/1251171/pexels-photo-1251171.jpeg",
   },
 ];
+
+const NavMenuLinks = [
+  {
+    id: 1,
+    text: "Top",
+    route: "/",
+  },
+  {
+    id: 2,
+    text: "Fire",
+    route: "/Fire",
+  },
+  {
+    id: 1,
+    text: "About",
+    route: "/About",
+  },
+];
