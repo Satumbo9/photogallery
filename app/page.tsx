@@ -7,6 +7,7 @@ function page() {
   return (
     <main className="size-full">
       <ThemeContextProvider>
+        
         <Home />
         <Footer />
       </ThemeContextProvider>

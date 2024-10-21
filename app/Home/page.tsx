@@ -4,15 +4,17 @@ import { imageGallery } from "@/components/data/data";
 import { FaMoon } from "react-icons/fa";
 
 import { useTheme } from "@/components/context/ThemeContext";
-import CardItem from "@/components/ui/CardItem";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import TopPics from "../Top/TopPics";
+import NavMenu from "@/components/ui/NavMenu";
 
 export default function Home() {
   const { isButton, theme, onThemeChange } = useTheme();
   // const [isTitleAnimated, setIsTitleAnimated] = useState<boolean>(false);
-  const imageRef = useRef<HTMLImageElement>(null);
+
+  const imageRef = useRef<HTMLDivElement>(null);
   const BfaceTitileRef = useRef<HTMLParagraphElement>(null);
 
   const animate = () => {
@@ -20,11 +22,11 @@ export default function Home() {
       const tl = gsap.timeline({ defaults: { duration: 0.7, rotateZ: 0 } });
 
       tl.to(imageRef.current, {
-        rotateZ: 4,
+        scale: 1.04,
       });
 
       tl.to(imageRef.current, {
-        rotateZ: 0,
+        scale: 1,
       });
     }
     if (BfaceTitileRef.current) {
@@ -49,21 +51,14 @@ export default function Home() {
   }, []);
   return (
     <section
-      className={`flex  flex-col size-full  items-center justify-center gap-10  ${theme.background} ${theme.text}`}
+      className={`flex  flex-col  items-center  gap-10  ${theme.background} ${theme.text}`}
     >
       <div className="h-fit w-[700px]  flex flex-col items-center">
         <p
           ref={BfaceTitileRef}
           // whileInView={isTitleAnimated ? { scale: 2 } : { scale: 1 }}
-          // transition={{ duration: 0.6 }}
+
           className={`text-5xl max-sm:text-2xl font-bold mb-10 mt-16`}
-          // onViewportEnter={() => {
-          //   if (!isTitleAnimated) {
-          //     console.log("Title Aanimated! ", isTitleAnimated);
-          //     setIsTitleAnimated(true);
-          //   }
-          //   console.log("Title Aanimated! ", isTitleAnimated);
-          // }}
         >
           BFaces
         </p>
@@ -82,30 +77,15 @@ export default function Home() {
         whileHover={{
           scale: 1.2,
         }}
-        // transition={{ duration: 1, delay: 1 }}
-
         onClick={onThemeChange}
         className={`bg-black text-4xl flex items-center justify-center rounded-md h-10 w-40 text-white ${theme.button} ${theme.text}`}
       >
         <FaMoon style={{ width: 20, height: 20 }} />
       </motion.button>
-      <div
-        ref={imageRef}
-        className="grid grid-cols-3 gap-4 max-xl:grid-cols-2 mb-16 max-sm:grid-cols-1"
-      >
-        {imageGallery.map((items) => {
-          return (
-            <CardItem
-              key={items.id}
-              id={items.id}
-              text={items.text}
-              url={items.url}
-              h={400}
-              w={400}
-            />
-          );
-        })}
-      </div>
+
+      {/* The  Sub memnu */}
+      <NavMenu />
+      <TopPics ref={imageRef} />
     </section>
   );
 }
