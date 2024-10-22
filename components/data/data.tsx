@@ -53,7 +53,7 @@ export const imageGallery = [
   },
 ];
 
-const NavMenuLinks = [
+export const NavMenuLinks = [
   {
     id: 1,
     text: "Top",
@@ -65,7 +65,7 @@ const NavMenuLinks = [
     route: "/Fire",
   },
   {
-    id: 1,
+    id: 3,
     text: "About",
     route: "/About",
   },
