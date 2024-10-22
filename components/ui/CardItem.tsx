@@ -14,7 +14,7 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
   const { isButton, theme } = useTheme();
   return (
     <div
-      className={`flex flex-col items-center cursor-pointer  p-10  justify-center ${theme.text}`}
+      className={`flex flex-col  items-center cursor-pointer  p-10  justify-center ${theme.text}`}
       key={id}
     >
       <motion.div

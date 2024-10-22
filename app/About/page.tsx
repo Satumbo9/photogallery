@@ -1,16 +1,15 @@
 "use client";
 import React from "react";
 import { useTheme } from "@/components/context/ThemeContext";
+import RenderForms from "@/components/ui/Forms";
 
 const About = () => {
   const { isButton, theme, onThemeChange } = useTheme();
   return (
     <section
-      className={`grid grid-cols-3 gap-4 h-screen w-screen  max-xl:grid-cols-2
-           py-10 px-32
-            overflow-auto   max-sm:grid-cols-1 ${theme.background} ${theme.text}  `}
+      className={` flex min-h-screen ${theme.background} ${theme.text}  `}
     >
-      About
+      <RenderForms name="Register" />
     </section>
   );
 };

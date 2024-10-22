@@ -39,7 +39,7 @@ const HeaderPage = () => {
 
   return (
     <section
-      className={`flex flex-col md:fixed  w-full items-center justify-between gap-2 z-40 max-sm:w-screen  ${
+      className={`flex flex-col md:sticky  items-center justify-between gap-2 z-40 max-sm:w-screen  ${
         isButton ? "border-b-[1px] border-gray-200" : "border-b-[0.5px]"
       } border-opacity-5 ${isButton ? theme.background : "bg-white"} ${
         theme.text

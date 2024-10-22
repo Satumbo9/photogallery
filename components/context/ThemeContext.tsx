@@ -58,7 +58,7 @@ const ThemeContextProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         return {
           text: "text-white",
           background: "bg-black",
-          button: "bg-gradient-to-r from-cyan-500 to-blue-500",
+          button: "bg-red-500",
         };
       } else {
         setIsButton(false);
