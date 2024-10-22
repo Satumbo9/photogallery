@@ -14,7 +14,7 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
   const { isButton, theme } = useTheme();
   return (
     <div
-      className={`flex flex-col items-center cursor-pointer   justify-center ${theme.text}`}
+      className={`flex flex-col items-center cursor-pointer  p-10  justify-center ${theme.text}`}
       key={id}
     >
       <motion.div
@@ -28,7 +28,7 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
         whileHover={{
           scale: 1.1,
           rotateZ: 2,
-          y: -10,
+          y: -20,
         }}
         transition={{
           duration: 0.4,
@@ -37,20 +37,20 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
       >
         <Image
           priority
-          className="rounded-md w-full "
+          className="rounded-md w-full shadow-md	 "
           src={url}
           alt={text}
           width={400}
           height={300}
         />
       </motion.div>
-      <p
-        className={`text-xl mt-2 font-semibold  ${
+      {/* <p
+        className={`text-xl mt-4 font-semibold  ${
           isButton ? " " : "text-gray-700"
         }`}
       >
         {text}
-      </p>
+      </p> */}
     </div>
   );
 };

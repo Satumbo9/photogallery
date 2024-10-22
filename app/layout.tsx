@@ -35,13 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col    antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex w-screen h-screen    antialiased`}
       >
+        {" "}
         <ThemeContextProvider>
-          <HeaderPage />
           <NavMenu />
-          {children}
-          <Footer />
+          <div className="size-full">
+            <HeaderPage />
+            {children}
+            <Footer />
+          </div>
         </ThemeContextProvider>
       </body>
     </html>

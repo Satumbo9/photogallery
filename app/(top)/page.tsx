@@ -5,6 +5,7 @@ import { imageGallery } from "@/components/data/data";
 import { useEffect, useRef } from "react";
 import CardItem from "@/components/ui/CardItem";
 import { useTheme } from "@/components/context/ThemeContext";
+import HeaderPage from "@/components/ui/Header";
 import gsap from "gsap";
 
 interface GalleryProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -57,10 +58,10 @@ const TopPics = () => {
   return (
     <section
       // ref={imageRef}
-      className={`grid grid-cols-3 gap-4  max-xl:grid-cols-2
-           py-10 px-32
-            overflow-auto   max-sm:grid-cols-1 ${theme.background} ${theme.text} h-screen w-screen  `}
-    ></section>
+      className={` ${theme.background} ${theme.text} h-screen w-screen  `}
+    >
+      {/* <HeaderPage /> */}
+    </section>
   );
 };
 export default TopPics;

@@ -6,39 +6,86 @@ import { SlFire } from "react-icons/sl";
 import { SiAboutdotme } from "react-icons/si";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
+import { usePathname } from "next/navigation";
 import { NavMenuLinks } from "../data/data";
+import { FaHeart } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+import { RiFireFill } from "react-icons/ri";
+
 import Link from "next/link";
 
 const NavMenu = () => {
   const { isButton, theme, onThemeChange } = useTheme();
+  const pathname = usePathname();
   return (
     <nav
-      className={`flex gap-48 items-center justify-center p-5 ${theme.text} ${theme.background}`}
+      className={`flex flex-col border-opacity-5 w-30 p-2 gap-40  py-20 fixed  h-screen ${
+        isButton
+          ? "border-r-[1px] border-gray-200"
+          : "border-r-[1px] border-gray-200 border-opacity-50"
+      }  ${theme.text} ${isButton ? theme.background : "bg-white"}`}
     >
       {NavMenuLinks.map((items) => {
         return (
-          <p
+          <div
             key={items.id}
             className={` font-bold cursor-pointer ${
-              isButton ? "hover:text-red-500" : "hover:text-sky-500"
+              isButton ? "hover:text-red-300" : "hover:text-red-300 "
             }  h-10 w-20 flex items-center justify-center  text-xl`}
           >
             {items.text === "Top" ? (
-              <Link className=" py-5 px-10" href={items.route}>
-                <TfiGallery style={{ width: 30, height: 30 }} />
-              </Link>
+              <motion.div
+                whileTap={{
+                  scale: 2,
+                }}
+                className=" w-20 flex items-center justify-center"
+              >
+                <Link
+                  className={` py-5 px-10 ${
+                    items.route === pathname ? "text-red-500" : null
+                  }`}
+                  href={items.route}
+                >
+                  <TfiGallery style={{ width: 40, height: 40 }} />
+                </Link>
+              </motion.div>
             ) : null}
             {items.text === "Fire" ? (
-              <Link className=" py-5 px-10" href={items.route}>
-                <SlFire style={{ width: 30, height: 30 }} />
-              </Link>
+              <motion.div
+                whileTap={{
+                  scale: 2,
+                }}
+                className=" w-20 flex items-center justify-center"
+              >
+                <Link
+                  className={` py-5 px-10 ${
+                    items.route === pathname ? "text-red-500" : null
+                  }`}
+                  href={items.route}
+                >
+                  <RiFireFill style={{ width: 40, height: 40 }} />
+                </Link>
+              </motion.div>
             ) : null}
             {items.text === "About" ? (
-              <Link className=" py-5 px-10" href={items.route}>
-                <SiAboutdotme style={{ width: 30, height: 30 }} />
-              </Link>
+              <motion.div
+                whileTap={{
+                  scale: 2,
+                }}
+                className=" w-20 flex items-center justify-center"
+              >
+                <Link
+                  className={` py-5 px-10 ${
+                    items.route === pathname ? "text-red-500" : null
+                  }`}
+                  href={items.route}
+                >
+                  <FaHeart style={{ width: 40, height: 40 }} />
+                </Link>
+              </motion.div>
             ) : null}
-          </p>
+          </div>
         );
       })}
     </nav>
