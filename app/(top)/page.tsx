@@ -58,9 +58,12 @@ const TopPics = () => {
   return (
     <section
       // ref={imageRef}
-      className={` ${theme.background} ${theme.text} h-screen w-screen  `}
+      className={` relative bg-hero-pattern bg-no-repeat backdrop-blur-3xl  bg-cover flex justify-center ${theme.text} h-screen w-screen   `}
     >
-      {/* <HeaderPage /> */}
+      {/* <div className="absolute bg-opacity-5 flex flex-col items-center mt-40  justify-center bg-red-500	h-screen w-full">
+        <p className="text-6xl font-extrabold text-white">+500k</p>
+        <p className="text-9xl font-bold  text-red-500">PartnerShips</p>
+      </div> */}
     </section>
   );
 };

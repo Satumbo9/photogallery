@@ -5,6 +5,8 @@ import { useRef, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
 import { FaMoon } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { CiBrightnessUp } from "react-icons/ci";
+
 import gsap from "gsap";
 
 const HeaderPage = () => {
@@ -37,9 +39,11 @@ const HeaderPage = () => {
 
   return (
     <section
-      className={`flex flex-col items-center justify-between gap-2  ${
+      className={`flex flex-col md:fixed  w-full items-center justify-between gap-2 z-40 max-sm:w-screen  ${
         isButton ? "border-b-[1px] border-gray-200" : "border-b-[0.5px]"
-      } border-opacity-5 ${theme.background} ${theme.text}`}
+      } border-opacity-5 ${isButton ? theme.background : "bg-white"} ${
+        theme.text
+      }`}
     >
       <motion.button
         whileTap={{
@@ -49,14 +53,14 @@ const HeaderPage = () => {
         onClick={onThemeChange}
         className={`text-4xl  mt-5 flex items-center justify-center gap-10 rounded-md    ${theme.text}`}
       >
-        <FaMoon style={{ width: 40, height: 40 }} />
+        <CiBrightnessUp style={{ width: 40, height: 40 }} />
       </motion.button>
       <p
         className="text-5xl w-40 text-center flex items-center justify-center py-5 font-bold"
         // whileInView={isTitleAnimated ? { scale: 2 } : { scale: 1 }}
         //           className={`text-5xl max-sm:text-2xl font-bold `}
       >
-        BFaces
+        Bfaces
       </p>
 
       {/* <p

@@ -35,16 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex w-screen h-screen    antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex flex-col  w-screen h-screen    antialiased`}
       >
         {" "}
         <ThemeContextProvider>
-          <NavMenu />
-          <div className="size-full">
+          <div className="max-sm:flex max-sm:flex-col max-sm:items-center">
+            <NavMenu />
             <HeaderPage />
-            {children}
-            <Footer />
           </div>
+
+          <div className="size-full">{children}</div>
         </ThemeContextProvider>
       </body>
     </html>

@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        "hero-pattern":
+          "url('https://images.pexels.com/photos/27950895/pexels-photo-27950895/free-photo-of-a-black-and-white-photo-of-a-woman-holding-up-her-hand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
+      },
     },
   },
   plugins: [],

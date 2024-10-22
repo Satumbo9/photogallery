@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { NavMenuLinks } from "../data/data";
 import { FaHeart } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { BsFillCameraFill } from "react-icons/bs";
 
 import { RiFireFill } from "react-icons/ri";
 
@@ -20,7 +21,7 @@ const NavMenu = () => {
   const pathname = usePathname();
   return (
     <nav
-      className={`flex flex-col border-opacity-5 w-30 p-2 gap-40  py-20 fixed  h-screen ${
+      className={`flex  z-50 flex-col max-sm:flex-row max-sm:h-40 border-opacity-5 w-30 p-2 max-sm:gap-10 gap-40  py-20 md:fixed max-sm:w-screen  md:h-screen ${
         isButton
           ? "border-r-[1px] border-gray-200"
           : "border-r-[1px] border-gray-200 border-opacity-50"
@@ -32,7 +33,7 @@ const NavMenu = () => {
             key={items.id}
             className={` font-bold cursor-pointer ${
               isButton ? "hover:text-red-300" : "hover:text-red-300 "
-            }  h-10 w-20 flex items-center justify-center  text-xl`}
+            }  h-10 w-20 flex   items-center justify-center  text-xl`}
           >
             {items.text === "Top" ? (
               <motion.div
@@ -47,7 +48,7 @@ const NavMenu = () => {
                   }`}
                   href={items.route}
                 >
-                  <TfiGallery style={{ width: 40, height: 40 }} />
+                  <BsFillCameraFill style={{ width: 40, height: 40 }} />
                 </Link>
               </motion.div>
             ) : null}
