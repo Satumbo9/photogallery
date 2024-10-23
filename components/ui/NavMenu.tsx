@@ -27,7 +27,7 @@ const NavMenu = () => {
           : "border-r-[1px] border-gray-200 border-opacity-50"
       }  ${theme.text} ${
         isButton ? theme.background : "bg-white"
-      }  w-40 flex-col  border-opacity-5 w-30 h-screen p-2  gap-40  py-20 
+      }  w-28 flex-col  border-opacity-5 w-30 h-screen p-2  gap-40  py-20 
         
         
 

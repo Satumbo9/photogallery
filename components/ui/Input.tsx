@@ -19,7 +19,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           ref={ref}
           type="text"
-          className={` ${className} w-full p-5 h-10 border ${theme.text}`}
+          className={` ${className} w-full p-5 h-10 border text-black`}
           typeof={type}
           {...props}
           placeholder={placeHolder}

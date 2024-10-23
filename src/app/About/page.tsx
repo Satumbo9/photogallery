@@ -9,7 +9,7 @@ const About = () => {
     <section
       className={` flex min-h-screen ${theme.background} ${theme.text}  `}
     >
-      <RenderForms name="Register" />
+      {/* <RenderForms name="Register" /> */}
     </section>
   );
 };

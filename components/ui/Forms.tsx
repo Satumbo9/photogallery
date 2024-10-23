@@ -39,7 +39,7 @@ const Register = () => {
     <div
       className={`${theme.background} ${theme.text} flex size-full items-center  flex-col   `}
     >
-      <div className="mt-40 flex items-center flex-col gap-5">
+      <div className="mt-10 p-10 flex items-center flex-col gap-5">
         <p className="text-4xl font-bold">Become a Part of Our Journey</p>
         <Form className="flex flex-col gap-5 w-[700px] items-center">
           <p className="text-xl  text-gray-500">Personal Details</p>
