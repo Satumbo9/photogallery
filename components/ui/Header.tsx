@@ -39,7 +39,7 @@ const HeaderPage = () => {
 
   return (
     <section
-      className={`flex flex-col md:sticky  items-center justify-between gap-2 z-40 max-sm:w-screen  ${
+      className={`flex fixed flex-col w-screen  items-center justify-between gap-2 z-40 max-sm:w-screen  ${
         isButton ? "border-b-[1px] border-gray-200" : "border-b-[0.5px]"
       } border-opacity-5 ${isButton ? theme.background : "bg-white"} ${
         theme.text
@@ -51,12 +51,12 @@ const HeaderPage = () => {
           rotateZ: 30,
         }}
         onClick={onThemeChange}
-        className={`text-4xl  mt-5 flex items-center justify-center gap-10 rounded-md    ${theme.text}`}
+        className={`text-4xl  mt-5 flex items-center justify-center  rounded-md    ${theme.text}`}
       >
         <CiBrightnessUp style={{ width: 40, height: 40 }} />
       </motion.button>
       <p
-        className="text-5xl w-40 text-center flex items-center justify-center py-5 font-bold"
+        className="text-5xl w-40 text-center flex items-center justify-center  font-bold"
         // whileInView={isTitleAnimated ? { scale: 2 } : { scale: 1 }}
         //           className={`text-5xl max-sm:text-2xl font-bold `}
       >

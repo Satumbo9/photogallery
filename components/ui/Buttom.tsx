@@ -8,11 +8,13 @@ interface ButtomProps extends React.HTMLAttributes<HTMLButtonElement> {
 }
 
 const Buttom = forwardRef<HTMLButtonElement, ButtomProps>(
-  ({ label, className, type }, ref) => {
+  ({ label, className, type, ...props }, ref) => {
     {
       const { isButton, theme } = useTheme();
       return (
         <button
+          type={type}
+          {...props}
           className={`font-bold  rounded-md w-40 h-10 ${
             theme.button
           } ${className} ${theme.text} ${
