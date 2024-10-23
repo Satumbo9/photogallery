@@ -35,14 +35,16 @@ const Fire = () => {
   const imageRef = useRef<HTMLDivElement>(null);
   const animate = () => {
     if (imageRef.current) {
-      const tl = gsap.timeline({ defaults: { duration: 0.7, rotateZ: 0 } });
-
-      tl.to(imageRef.current, {
-        scale: 1.04,
+      const tl = gsap.timeline({
+        defaults: { duration: 4, rotateZ: 9, repeat: -1 },
       });
 
       tl.to(imageRef.current, {
-        scale: 1,
+        scale: -10,
+      });
+
+      tl.to(imageRef.current, {
+        scale: 8,
       });
     }
   };
@@ -77,14 +79,16 @@ const Fire = () => {
           >
             {shuffleItems.map((items, i) => {
               return (
-                <CardItem
-                  key={items.id}
-                  id={items.id}
-                  text={items.text}
-                  url={items.url}
-                  h={500}
-                  w={500}
-                />
+                <div ref={imageRef}>
+                  <CardItem
+                    key={items.id}
+                    id={items.id}
+                    text={items.text}
+                    url={items.url}
+                    h={500}
+                    w={500}
+                  />
+                </div>
               );
             })}
           </div>

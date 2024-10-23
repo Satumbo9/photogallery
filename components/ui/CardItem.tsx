@@ -18,13 +18,6 @@ const CardItem: React.FC<CardItemProps> = ({ id, text, url }) => {
       key={id}
     >
       <motion.div
-        // whileTap={{
-        //   opacity: 5,
-        //   scale: 1.4,
-        //   rotateZ: 0,
-        //   y: 30,
-        //   // speed: 9,
-        // }}
         whileHover={{
           scale: 1.1,
           rotateZ: 2,
