@@ -71,15 +71,18 @@ const Register = () => {
       className={`${theme.background} ${theme.text} flex size-full items-center  flex-col   `}
     >
       <div className="mt-10 p-10 flex items-center flex-col gap-5">
-        <p className="text-4xl font-bold text-gray-500">
-          Become a Part of Our Journey
-        </p>
+        <p className="text-4xl font-bold text-gray-500">Become a Model</p>
 
         <Form className="flex flex-col gap-5 w-[700px] items-center">
           <div className="flex gap-5">
             {nextStep.map((items, i) => {
               return (
-                <p key={i} className="font-semibold text-gray-500">
+                <p
+                  key={i}
+                  className={`font-semibold text-gray-500 ${
+                    currentStep === items.id ? "text-red-500 " : null
+                  }`}
+                >
                   {items.text}
                 </p>
               );
@@ -99,7 +102,7 @@ const Register = () => {
           )}
           {currentStep === 1 && (
             <div className="w-full flex items-center justify-center flex-col gap-5">
-              <p className="text-xl  text-gray-500">Physical Details</p>
+              <p className={`text-xl  text-gray-500 `}>Physical Details</p>
               <Input placeHolder="Skin Color" />
               <Input placeHolder="Eye Color" />
               <Input placeHolder="HairColor" />
@@ -124,7 +127,7 @@ const Register = () => {
               </div>
             </div>
           )}
-          <div className="flex">
+          <div className="flex gap-5">
             {currentStep !== 0 && (
               <Buttom
                 onClick={() => {
